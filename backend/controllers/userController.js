@@ -1,6 +1,7 @@
 const User = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const validator = require('validator')
+const jwt = require('jsonwebtoken')
 
 
 //user registration controller
@@ -54,7 +55,10 @@ const loginUser = async (req, res) => {
         if (!compare) {
             return res.status(400).json({ error: 'incorrect password' })
         }
-        res.status(201).json(user)
+        const token = jwt.sign({id: user._id, isAdmin: user.isAdmin} , process.env.SECRET)
+        res.cookie('access_token' , token ,{
+            httpOnly:true
+        }).status(201).json(user )
     }
     catch (error) {
         res.status(500).json({ error: error.message })

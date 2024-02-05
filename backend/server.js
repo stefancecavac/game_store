@@ -6,14 +6,16 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const cors = require('cors')
-
+const cookieParser = require('cookie-parser')
 
 //route import
 
 const gameRouter = require('./routes/gameRoute')
 const userRouter = require('./routes/userRoute')
 
+
 //middleware
+app.use(cookieParser())
 app.use(cors())
 app.use(express.json())
 
