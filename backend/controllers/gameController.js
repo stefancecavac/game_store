@@ -34,7 +34,7 @@ const getGame = async(req ,res) => {
 
 //post game controller
 const postGame = async(req ,res) => {
-    try{
+    try{     
         const game = await Game.create(req.body)
         res.status(200).json(game)
     }
@@ -73,8 +73,7 @@ const updateGame = async(req ,res ) => {
     try{
         const game = await Game.findByIdAndUpdate({_id : id} , 
            {$set: req.body},
-           {new:true}
-            
+           {new:true} 
         )
         
         if(!game){

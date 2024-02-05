@@ -11,12 +11,15 @@ const cors = require('cors')
 //route import
 
 const gameRouter = require('./routes/gameRoute')
+const userRouter = require('./routes/userRoute')
 
 //middleware
 app.use(cors())
 app.use(express.json())
 
 app.use('/api/games',gameRouter)
+app.use('/api/auth',userRouter)
+
 
 
 
