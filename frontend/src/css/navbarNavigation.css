@@ -1,0 +1,19 @@
+
+.navbarnavigation{
+    margin-right: 60%;
+}
+
+.navbarnavigation a{
+    text-decoration: none;
+    background-color: #070c34;
+    border-radius: 20px;
+    color:white;
+    padding:20px;
+    margin: 20px;
+    border: 2px solid  #151b57;
+}
+.navbarnavigation a:hover{
+    cursor: pointer;
+    background-color: #121a5b;
+    border: 2px solid  #2c37b0;
+}

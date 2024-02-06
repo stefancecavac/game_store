@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 //get all games controller
 const getGames = async(req, res) => {
     try{
-        const game = await Game.find({}).sort({createdAt:-1})
+        const game = await Game.find(req.query).sort({createdAt:-1})
         res.status(200).json(game)
     }
     catch(error){

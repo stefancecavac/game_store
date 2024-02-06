@@ -1,0 +1,35 @@
+.userinfo{
+    display: flex;
+    align-items: center;
+}
+.userinfo a{
+    background-color: #070c34;
+    border-radius: 20px;
+    color:white;
+    padding:20px;
+    margin: 20px;
+    border: 2px solid  #151b57;
+    text-decoration: none;
+}
+
+.userinfo a:hover{
+    cursor: pointer;
+    background-color: #121a5b;
+    border: 2px solid  #2c37b0;
+}
+
+.logout {
+    background-color: #070c34;
+    border-radius: 20px;
+    color:white;
+    padding:20px;
+    margin: 20px;
+    border: 2px solid  #151b57;
+    text-decoration: none;
+}
+
+.logout:hover{
+    cursor: pointer;
+    background-color: #121a5b;
+    border: 2px solid  #2c37b0;
+}

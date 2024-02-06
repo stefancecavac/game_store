@@ -1,0 +1,33 @@
+.gameCard{
+    display: flex;
+    flex-direction: column;
+    background-color: #151b57;
+    box-shadow: 2px 2px 7px -5px rgba(0, 0, 0, 0.86);
+    border-radius: 20px;
+    padding:10px;
+    margin: 20px;
+    height: 250px;
+}
+.imagecontainer{
+    background-color: white;
+    border-radius: 20px;
+    height: 100%;
+}
+h3{
+    color:white;
+    margin: 5px;
+}
+.gameinfo{
+    display: flex;
+    justify-content: space-between;
+}
+.gameinfo p{
+    color: grey;
+    font-size: 0.6em;
+}
+.price{
+    color: greenyellow;
+    display: flex;
+    justify-content: right;
+    font-size: 1em;
+}

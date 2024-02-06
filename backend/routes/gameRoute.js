@@ -6,16 +6,18 @@ const authentication = require('../middlewares/authentication')
 const authorize = require('../middlewares/authorization')
 
 //game routes
-router.use(authentication)
+
 
 
 
 router.get('/',getGames)
 router.get('/:id',getGame)
-router.post('/',postGame)
-router.put('/:id',updateGame)
+
+
 
 router.use(authorize)
+router.post('/',postGame)
+router.put('/:id',updateGame)
 router.delete('/:id',deleteGame)
 
 

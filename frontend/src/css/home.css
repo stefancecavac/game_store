@@ -1,0 +1,11 @@
+.home{
+    display: flex;
+  
+}
+
+.content{
+
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
+}
