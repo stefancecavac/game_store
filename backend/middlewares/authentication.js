@@ -2,25 +2,29 @@ const jwt = require('jsonwebtoken')
 const User = require('../models/userModel')
 
 
-const authentication = async (req, res, next) => {
-    try {
-        const token = req.cookies.access_token;
+const authentication = async(req , res , next) => {
+    
+    const {authorization} = req.headers
 
-        if (!token) {
-            return res.status(400).json({ error: 'authorization token required' });
-        }
-
-        const decodedToken = jwt.verify(token, process.env.SECRET);
-        if (!decodedToken) {
-            return res.status(400).json({ error: 'not a valid token' });
-        }
-        req.user = decodedToken
-        next();
-    } catch (error) {
-        res.status(401).json({ error: 'not authorized' });
+    if(!authorization) {
+      return   res.status(400).json({message:' authorization token required'})
     }
-};
-
-
+    const token = authorization.split(' ')[1]
+  
+    
+    try{
+        const decodedToken = jwt.verify(token , process.env.SECRET)
+        req.user = decodedToken
+       
+      
+        next()
+     }
+     
+     catch(error){
+        res.status(401).json({message: 'not authorized'})
+     }
+     
+    
+}
 
 module.exports = authentication

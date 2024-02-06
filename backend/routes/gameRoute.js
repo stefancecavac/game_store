@@ -8,6 +8,7 @@ const authorize = require('../middlewares/authorization')
 //game routes
 
 
+router.use(authentication)
 
 
 router.get('/',getGames)

@@ -1,7 +1,7 @@
 import '../css/home.css'
 import {useGameContext} from '../hooks/useGamehook'
 import { useEffect } from 'react'
-
+import {useUserContext} from '../hooks/useUserHook'
 
 import Category from "../components/category"
 import GameCard from '../components/gameCard'
@@ -9,23 +9,28 @@ import GameCard from '../components/gameCard'
 
 const Home = () => {
     const {games , dispatch} = useGameContext()
-
+    const {user} = useUserContext()
+    
     useEffect(() => {
         const fetchGames = async() => {
-            try{
-                const response = await fetch(`http://localhost:4000/api/games`)
+            if(!user){
+               return  console.log('not loged in')
+            }
+          
+                const response = await fetch(`http://localhost:4000/api/games/`,{
+                    headers: {
+                        'Authorization': `Bearer ${user.token}`,
+                    }
+                })
                 const json = await response.json()
                 if(response.ok){
                     dispatch({type: 'SET_GAMES' ,payload:json})
                 }
-            }
-            catch(error){
-                console.log(error)
-            }
+            
         
         }
         fetchGames()
-    },[dispatch])
+    },[dispatch,user])
 
     return(
         <div className="home">
