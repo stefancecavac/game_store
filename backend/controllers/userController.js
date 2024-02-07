@@ -55,7 +55,7 @@ const loginUser = async (req, res) => {
         if (!compare) {
             return res.status(400).json({ error: 'incorrect password' })
         }
-        const token = jwt.sign({id: user._id, isAdmin: user.isAdmin} , process.env.SECRET , {expiresIn: "1h"})
+        const token = jwt.sign({id: user._id, isAdmin: user.isAdmin} , process.env.SECRET , {expiresIn: "20s"})
         res.status(201).json({...user.toObject(), token})
     }
     catch (error) {

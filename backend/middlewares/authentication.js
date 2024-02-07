@@ -10,12 +10,15 @@ const authentication = async(req , res , next) => {
       return   res.status(400).json({message:' authorization token required'})
     }
     const token = authorization.split(' ')[1]
-  
+    
     
     try{
         const decodedToken = jwt.verify(token , process.env.SECRET)
+        if(!decodedToken){
+         return res.status(401).json({message: 'not valid token'})
+        }
         req.user = decodedToken
-       
+       console.log(req.user)
       
         next()
      }
