@@ -1,0 +1,33 @@
+.gamepage {
+    margin: 20px auto;
+    background-color: #151b57;   
+     width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gamepage h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.image{
+   
+    background-color: white;
+   height: 400px;
+}
+.information {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    margin: 20px;
+    
+}
+.information p{
+    color: black;
+}
+
+.addtocart{
+    background-color: white;
+    margin:20px;
+}

@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 
 import Category from "../components/category"
 import GameCard from '../components/gameCard'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
@@ -32,7 +33,8 @@ const Home = () => {
         
         <div className='content'>
             {games && games.map((game) => (
-                <GameCard key={game._id} game={game}></GameCard>
+
+               <Link to={`/${game._id}`} key={game._id}><GameCard  game={game}></GameCard></Link> 
             ))}
         </div>
 

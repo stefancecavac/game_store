@@ -12,6 +12,10 @@ export const gameReducer = (state, action) => {
             return {
                 games: action.payload
             }
+            case "SET_GAME":
+            return {
+                singleGame: action.payload
+            }
         case 'UPDATE_GAME':
             return {
                 
