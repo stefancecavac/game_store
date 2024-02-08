@@ -6,6 +6,28 @@ aside{
     justify-content: center;
     margin:20px;
     border-radius: 30px;
-    width: 200px;
+    width: 20%;
     box-shadow: 2px 2px 7px -5px rgba(0, 0, 0, 0.86);
+}
+.genres{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 10px;
+    border: 2px solid  #2c37b0;
+}
+aside button {
+    background-color: #070c34;
+    border-radius: 10px;
+    color:white;
+    padding:5px;
+    margin: 5px;
+    border: 2px solid  #151b57;
+    text-decoration: none;
+}
+
+aside button:hover{
+    cursor: pointer;
+    background-color: #121a5b;
+    border: 2px solid  #2c37b0;
 }

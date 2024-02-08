@@ -4,8 +4,11 @@
 }
 
 .content{
-
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
+}
+
+.content a{
+    margin: 20px;
 }

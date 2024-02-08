@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route ,Navigate} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useUserContext } from './hooks/useUserHook'
 
 //components import
@@ -9,9 +9,10 @@ import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'
 import GamePage from './pages/gamePage'
+import AdminDashboard from './pages/adminDashboard'
 
 function App() {
-  const{user} = useUserContext()
+  const { user } = useUserContext()
 
   return (
     <>
@@ -21,12 +22,14 @@ function App() {
 
         <Routes>
 
+
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/:gameId' element={<GamePage></GamePage>}></Route>
 
           <Route path='/login' element={user ? (<Navigate to='/'></Navigate>) : (<Login></Login>)}></Route>
           <Route path='/register' element={user ? (<Navigate to='/'></Navigate>) : (<Register></Register>)}></Route>
 
+          <Route path='/admin' element={user && user.isAdmin ? <AdminDashboard /> : <Navigate to='/'></Navigate>} />
 
         </Routes>
 
